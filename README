@@ -8,9 +8,16 @@ CMake 2.8
 
 Compile:
 
+Simple build:
+
+cd path/to/iNumerics
+./make.sh
+
+Manual build:
+
 cd path/to/iNumerics
 mkdir build && cd build
 cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -GXcode ..
 xcodebuild -target install -configuration Release
 
-The result can be found in path/to/iNumerics/dist
+The static library can be found in path/to/iNumerics/dist
