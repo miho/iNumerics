@@ -8,10 +8,9 @@ CMake 2.8
 
 Compile:
 
-#> cd path/to/iNumerics
-#> mkdir build
-#> cd build
-#> cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -GXcode ..
-#> xcodebuild -target install -configuration Release
+cd path/to/iNumerics
+mkdir build && cd build
+cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -GXcode ..
+xcodebuild -target install -configuration Release
 
 The result can be found in path/to/iNumerics/dist
