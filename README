@@ -11,13 +11,26 @@ Compile:
 Simple build:
 
 cd path/to/iNumerics
-./make.sh
+
+./make.sh   (building for device)
+
+or
+
+./make.sh simulator  (building for simulator)
+
 
 Manual build:
 
 cd path/to/iNumerics
 mkdir build && cd build
-cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -GXcode ..
+
+cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -GXcode ..    (building for device)
+
+or
+
+cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DIOS_PLATFORM=SIMULATOR -GXcode ..    (building for simulator)
+
 xcodebuild -target install -configuration Release
+
 
 The static library can be found in path/to/iNumerics/dist

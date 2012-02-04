@@ -25,13 +25,3 @@
  * authors and should not be interpreted as representing official policies, either expressed
  * or implied, of Michael Hoffer <info@michaelhoffer.de>.
  */
-
-#ifndef TYPES_H
-#define	TYPES_H
-
-#include <vector>
-
-typedef std::vector< double > DVec;
-
-#endif	/* TYPES_H */
-

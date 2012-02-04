@@ -13,7 +13,5 @@ add_library(inumerics ${SRC})
 
 set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/lib")
 
-message("DIR: ${CMAKE_SOURCE_DIR}/lib")
-
 install (TARGETS inumerics DESTINATION .)
 install (DIRECTORY "../include" DESTINATION .)
