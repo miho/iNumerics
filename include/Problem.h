@@ -61,8 +61,6 @@ namespace iNumerics {
         
         Problem& setPrecition(double absError, double relError, double h = 0.1);
         
-        Problem& setTrajectory(Trajectory& trajectory);
-        
         void operator() ( const DVec &x , DVec &dxdt , const double t );
 
     private:
