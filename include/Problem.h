@@ -53,7 +53,7 @@ namespace iNumerics {
         Problem(const Problem& orig);
         virtual ~Problem();
 
-        Problem& setRHS(RHS_FUNC rhs);
+        Problem& setRhs(RHS_FUNC rhs);
         
         Problem& setInitialValue(DVec init);
     

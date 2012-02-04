@@ -49,7 +49,7 @@ namespace iNumerics {
         return *this;
     }
     
-    Problem& Problem::setRHS(RHS_FUNC rhs) {
+    Problem& Problem::setRhs(RHS_FUNC rhs) {
         _rhs = rhs;
         
         return *this;
