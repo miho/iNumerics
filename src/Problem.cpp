@@ -34,6 +34,7 @@ namespace iNumerics {
     Problem::Problem() {
         _absError = 1.e-10;
         _relError = 1.e-6;
+    	_h = 0.1;
     }
 
     Problem::Problem(const Problem& orig) {
