@@ -43,4 +43,8 @@ Cleaning builds:
 
 ./make.sh clean
 
-The static library can be found in path/to/iNumerics/dist
+Usage:
+
+The static library libinumerics.a can be found in path/to/iNumerics/dist
+
+To use this library in an existing Xcode project, add the library as framework and add dist/include to the the project.
