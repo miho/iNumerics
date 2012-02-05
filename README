@@ -1,6 +1,5 @@
-Simple ODE framework based on odeint for iOS.
+Simple ODE framework for iOS. iNumerics currently uses ODE solvers from odeint (https://github.com/headmyshoulder/odeint-v2).
 
-http://headmyshoulder.github.com/odeint-v2/
 
 Requirements:
 
