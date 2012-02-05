@@ -13,4 +13,15 @@ set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/dist")
 
 add_subdirectory(src)
 
+if (NOT TARGET_PLATFORM)
+    set( TARGET_PLATFORM "X86" )
+endif()
+
+if ( ${TARGET_PLATFORM} STREQUAL "IOS" ) 
+    message(">> Building for IOS")
+else()
+    message(">> Building for Host Arch: x86")
+    add_subdirectory(examples)
+endif()
+
 

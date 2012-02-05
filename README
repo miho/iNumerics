@@ -13,11 +13,15 @@ Simple build:
 
 cd path/to/iNumerics
 
-./make.sh   (building for device)
+./make.sh ios-device  (building for device)
 
 or
 
-./make.sh simulator  (building for simulator)
+./make.sh ios-simulator  (building for simulator)
+
+or
+
+./make.sh x86  (builds for x86, builds example programs)
 
 
 Manual build:
@@ -25,19 +29,28 @@ Manual build:
 cd path/to/iNumerics
 mkdir build && cd build
 
+Building for iOS:
+
 if you are building for device:
 
-cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -GXcode ..
+cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DTARGET_PLATFORM=IOS -GXcode ..
 
 or if you are building for simulator:
 
-cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DIOS_PLATFORM=SIMULATOR -GXcode .. 
+cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DTARGET_PLATFORM=IOS -DIOS_PLATFORM=SIMULATOR -GXcode .. 
 
 
 to finally start the build process:
 
 xcodebuild -target install -configuration Release
 
+Building for x86:
+
+cmake ..
+
+to start the build process and install everything to path/to/iNumerics/dist:
+
+make install
 
 Cleaning builds:
 
@@ -47,4 +60,9 @@ Usage:
 
 The static library libinumerics.a can be found in path/to/iNumerics/dist
 
-To use this library in an existing Xcode project, add the library as framework and add dist/include to the the project.
+Example programs (only x86) can be found in path/to/iNumerics/dist/examples.
+
+To use this library in an existing Xcode project, add the library as framework
+and add dist/include to the the project. Make sure you only add the libraries
+and the header files as reference only! This makes it a lot easier to switch
+between target platforms (device/simulator).

@@ -29,20 +29,33 @@
 #/
 
 
-rm -rf build/* && mkdir -p build && cd build
-
 if [ "$1" == "clean" ]
 then 
 	echo ">> cleaning..."
-	rm -rf buid/* dist/*
+	rm -rf build/* dist/*
 	exit 0
 fi
 
-if [ "$1" == "simulator" ]
+rm -rf build/* && mkdir -p build && cd build
+
+if [ "$1" == "ios-simulator" ]
 then
-	cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DIOS_PLATFORM=SIMULATOR -GXcode .. 
+	cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DTARGET_PLATFORM=IOS -DIOS_PLATFORM=SIMULATOR -GXcode .. 
+	xcodebuild -target install -configuration Release
+elif [ "$1" == "ios-device" ] 
+then
+	cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DTARGET_PLATFORM=IOS -GXcode ..
+	xcodebuild -target install -configuration Release
+elif [ "$1" == "x86" ]
+then 
+	cmake -DTARGET_PLATFORM="X86" ..
+	make
 else
-	cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -GXcode ..
+	echo ">> ERROR: no build platform specified!"
+	echo ">> USAGE:"
+	echo ">> ./make.sh ios-simulator # build for simulator"
+	echo ">> ./make.sh ios-device    # build for device (iphone/ipad)"
+	echo ">> ./make.sh x86           # build for x86 (builds example programs)"
+	exit 1
 fi
 
-xcodebuild -target install -configuration Release
