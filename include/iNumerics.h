@@ -34,6 +34,7 @@
 #include "Trajectory.h"
 #include "ODESolver.h"
 #include "Problem.h"
+#include "Interpolation.h"
 
 
 #endif	/* INUMERICS_H */

@@ -29,17 +29,17 @@
 #ifndef ODESOLVER_H
 #define	ODESOLVER_H
 
-#include "iNumerics.h"
+#include "Types.h"
 #include "Trajectory.h"
 #include "Problem.h"
 
 namespace iNumerics {
-    
-    // forward declaration
+
+    // forward declarations
     class Problem;
+    
 
     class ODESolver {
-        
     public:
         ODESolver();
         ODESolver(const ODESolver& orig);

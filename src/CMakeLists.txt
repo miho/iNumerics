@@ -6,6 +6,7 @@ set(SRC
 	Trajectory.cpp
 	Problem.cpp
 	ODESolver.cpp
+        Interpolation.cpp
 )
 
 

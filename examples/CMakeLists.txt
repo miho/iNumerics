@@ -2,14 +2,8 @@ include_directories("../odeint")
 include_directories("../include")
 include_directories("../include")
 
-set(SRC
-	test01.cpp
-)
 
-
-
-
-add_executable( test01 ${SRC})
+add_executable( test01 test01.cpp)
 
 TARGET_LINK_LIBRARIES(test01 inumerics)
 

@@ -29,11 +29,11 @@
 #ifndef PROBLEM_H
 #define	PROBLEM_H
 
+#include <iostream>
+
 #include "Types.h"
 
-#include "ODESolver.h"
 
-#include <iostream>
 
 namespace iNumerics {
     
@@ -44,6 +44,9 @@ namespace iNumerics {
         virtual void operator() ( const DVec &x , DVec &dxdt , const double t ){};
     };*/
 
+    // forward declaration
+    class ODESolver;
+    
     class Problem {
         
         friend class ODESolver;
@@ -59,9 +62,7 @@ namespace iNumerics {
     
         Problem& setTimeRange(double t0, double tn);
         
-        Problem& setPrecition(double absError, double relError, double h = 0.1);
-        
-        void operator() ( const DVec &x , DVec &dxdt , const double t );
+        Problem& setPrecision(double absError, double relError, double h = 0.1);
 
     private:
 

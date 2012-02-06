@@ -33,5 +33,11 @@
 
 typedef std::vector< double > DVec;
 
+typedef std::pair<double, double> TimeValue;
+
+typedef std::vector<TimeValue> TimeSeries;
+
+#define CALL_MEMBER_FN(object,ptrToMember)  ((object).*(ptrToMember))
+
 #endif	/* TYPES_H */
 

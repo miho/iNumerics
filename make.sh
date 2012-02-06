@@ -49,7 +49,7 @@ then
 elif [ "$1" == "x86" ]
 then 
 	cmake -DTARGET_PLATFORM="X86" ..
-	make
+	make install
 else
 	echo ">> ERROR: no build platform specified!"
 	echo ">> USAGE:"

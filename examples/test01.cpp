@@ -13,21 +13,6 @@
 using namespace std;
 using namespace iNumerics;
 
-//class harm_osc : public RHS {
-//    double m_gam;
-//
-//public:
-//
-//    harm_osc(double gam) : m_gam(gam) {
-//    }
-//
-//    void operator() (const DVec &x, DVec &dxdt, const double t) {
-//        dxdt[0] = x[1];
-//        dxdt[1] = -x[0] - m_gam * x[1];
-//
-//        std::cout << dxdt[0] << " , " << dxdt[1] << std::endl;
-//    }
-//};
 
 void rhs(const DVec &x, DVec &dxdt, const double t) {
     dxdt[0] = x[1];
@@ -53,7 +38,7 @@ int main(int argc, char** argv) {
     p.setInitialValue(x).
             setRhs(&rhs).
             setTimeRange(0.0, 10.0).
-            setPrecition(1.0e-10, 1.0e-8);
+            setPrecision(1.0e-10, 1.0e-8);
 
     ODESolver solver;
 

@@ -44,18 +44,24 @@ namespace iNumerics {
             _trajectory(x, t);
         }
     };
-    
-//    class _RHSImpl {
+
+//    class _RhsWrapper {
 //    public:
-//        RHS& _rhs;
-//        
-//        _RHSImpl(RHS& rhs)
-//        : _rhs(rhs) {
+//        _RhsWrapper(T& rhsObj, RHS_FUNC rhs) {
+//            _rhsObj = rhsObj;
+//            _rhs = rhs;
 //        }
-//        
-//        void operator() ( const DVec &x , DVec &dxdt , const double t ) {
-//            _rhs(x, dxdt, t);
+//
+//        void operator() (const DVec &y, DVec &dydt, const double t) {
+//            if (_rhsObj == NULL) {
+//                _rhs(y, dydt, t);
+//            } else {
+//                CALL_MEMBER_FN((_rhsObj*), _rhs)(y, dydt, t);
+//            }
 //        }
+//    private:
+//        T& _rhsObj;
+//        RHS_FUNC _rhs;
 //    };
 
     ODESolver::ODESolver() {
@@ -81,5 +87,6 @@ namespace iNumerics {
                 problem._tn,
                 problem._h,
                 _StepObserver(trajectory));
+
     }
 }
