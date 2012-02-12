@@ -42,7 +42,7 @@ namespace iNumerics {
     class ODESolver {
     public:
         ODESolver();
-        ODESolver(const ODESolver& orig);
+//        ODESolver(const ODESolver& orig);
         virtual ~ODESolver();
 
         void solve(Problem& problem, Trajectory& trajectory);

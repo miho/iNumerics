@@ -35,8 +35,10 @@ namespace iNumerics {
     Trajectory::Trajectory() {
     }
 
-    Trajectory::Trajectory(const Trajectory& orig) {
-    }
+//    Trajectory::Trajectory(const Trajectory& orig) {
+//        this->_times = orig._times;
+//        this->_states = orig._states;
+//    }
 
     Trajectory::~Trajectory() {
     }
@@ -46,16 +48,70 @@ namespace iNumerics {
         _times.push_back(t);
     }
 
-    double Trajectory::getTime(std::size_t i) {
+    double Trajectory::getTime(std::size_t i) const {
         return _times[i];
     }
-    
-    const DVec& Trajectory::getState(std::size_t i) {
+
+    const DVec& Trajectory::getState(std::size_t i) const {
         return _states[i];
     }
-    
+
     size_t Trajectory::size() const {
         return _times.size();
     }
-    
+
+    double Trajectory::getMinTime() const {
+        
+        if (_times.size() == 0) {
+            return 0;
+        }
+
+        return *std::min_element(_times.begin(), _times.end());
+        
+    }
+
+    double Trajectory::getMaxTime() const {
+        
+        if (_times.size() == 0) {
+            return 0;
+        }
+
+        return *std::max_element(_times.begin(), _times.end());
+        
+    }
+
+    double Trajectory::getMinState(size_t i) const {
+        
+        if (_states.size() == 0) {
+            return 0;
+        }
+        
+        double result = _states[0][i];
+        
+        for (size_t j = 0; j < _states.size();j++) {
+            if (_states[j][i] < result) {
+                result = _states[j][i];
+            }
+        }
+        
+        return result;
+    }
+
+    double Trajectory::getMaxState(size_t i) const {
+        
+        if (_states.size() == 0) {
+            return 0;
+        }
+        
+        double result = _states[0][i];
+        
+        for (size_t j = 0; j < _states.size();j++) {
+            if (_states[j][i] > result) {
+                result = _states[j][i];
+            }
+        }
+        
+        return result;
+    }
+
 }

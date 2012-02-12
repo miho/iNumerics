@@ -31,11 +31,15 @@
 
 #include <vector>
 
-typedef std::vector< double > DVec;
+namespace iNumerics {
 
-typedef std::pair<double, double> TimeValue;
+    typedef std::vector< double > DVec;
 
-typedef std::vector<TimeValue> TimeSeries;
+    typedef std::pair<double, double> TimeValue;
+
+    typedef std::vector<TimeValue> TimeSeries;
+
+}
 
 #define CALL_MEMBER_FN(object,ptrToMember)  ((object).*(ptrToMember))
 

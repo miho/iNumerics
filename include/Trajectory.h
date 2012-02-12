@@ -37,14 +37,20 @@ namespace iNumerics {
     class Trajectory {
     public:
         Trajectory();
-        Trajectory(const Trajectory& orig);
+//        Trajectory(const Trajectory& orig);
         virtual ~Trajectory();
 
         void operator()(const DVec& x, const double t);
         
-        double getTime(std::size_t i);
-        const DVec& getState(std::size_t i);
+        double getTime(std::size_t i) const;
+        const DVec& getState(std::size_t i) const;
         size_t size() const;
+        
+        double getMinTime() const;
+        double getMaxTime() const;
+        
+        double getMinState(size_t i) const;
+        double getMaxState(size_t i) const;
 
     private:
         std::vector< DVec > _states;

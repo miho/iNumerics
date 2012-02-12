@@ -17,7 +17,7 @@ namespace iNumerics {
     class Interpolation {
     public:
         Interpolation(const TimeSeries& data);
-        Interpolation(const Interpolation& orig);
+//        Interpolation(const Interpolation& orig);
         virtual ~Interpolation();
 
         const double operator()(double t) const;

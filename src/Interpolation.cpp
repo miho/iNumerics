@@ -18,8 +18,8 @@ namespace iNumerics {
         }
     }
 
-    Interpolation::Interpolation(const Interpolation& orig) {
-    }
+//    Interpolation::Interpolation(const Interpolation& orig) {
+//    }
 
     Interpolation::~Interpolation() {
     }

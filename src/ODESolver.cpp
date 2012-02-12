@@ -67,8 +67,8 @@ namespace iNumerics {
     ODESolver::ODESolver() {
     }
 
-    ODESolver::ODESolver(const ODESolver& orig) {
-    }
+//    ODESolver::ODESolver(const ODESolver& orig) {
+//    }
 
     ODESolver::~ODESolver() {
     }

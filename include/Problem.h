@@ -53,7 +53,7 @@ namespace iNumerics {
         
     public:
         Problem();
-        Problem(const Problem& orig);
+//        Problem(const Problem& orig);
         virtual ~Problem();
 
         Problem& setRhs(RHS_FUNC rhs);

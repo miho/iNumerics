@@ -39,8 +39,8 @@ namespace iNumerics {
         _rhs = NULL;
     }
 
-    Problem::Problem(const Problem& orig) {
-    }
+//    Problem::Problem(const Problem& orig) {
+//    }
 
     Problem::~Problem() {
     }
