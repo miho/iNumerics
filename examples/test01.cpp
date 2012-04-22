@@ -59,8 +59,8 @@ void rhs(const DVec &x, DVec &dxdt, const double t) {
 int main(int argc, char** argv) {
 
 
-    Matrix<inDouble>::memCheck.initialize ( MByte ( 1.0 ), Byte ( 0 ) );
-    Vector<inDouble>::memCheck.initialize ( MByte ( 1.0 ), Byte ( 0 ) );
+    //Matrix<inDouble>::memCheck.initialize ( MByte ( 1.0 ), Byte ( 0 ) );
+    //Vector<inDouble>::memCheck.initialize ( MByte ( 1.0 ), Byte ( 0 ) );
     Matrix<inDouble> A(2,2); // row-col
     
     A(0,0) = 2;

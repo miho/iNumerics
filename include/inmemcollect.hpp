@@ -13,7 +13,7 @@ namespace iNumerics
 {
 
 	/******************************************************************************
-	*	                                                                          *
+	*	                                                                      *
 	*       Class: MemCollect (PUBLIC-MEMBERS)                                    *
 	*                                                                             *
 	******************************************************************************/
@@ -54,10 +54,13 @@ namespace iNumerics
 
 		if ( !_initialized )
 		{
+                        // not initialized, using default
+                        initialize(new MByte(1), 0);
+                    
 			std::cerr << "MemCollect<T>:" << std::endl;
-			std::cerr << ">> ERROR: MemCollect is not initialized!" << std::endl;
+			std::cerr << ">> WARNING: MemCollect is not initialized!" << std::endl;
 			std::cerr << ">> Please call MemCollect<T>::initialize( Byte maxMem, Byte memTolerance ) before usage!" << std::endl;
-			exit ( -1 );
+                        std::cerr << ">> now using MemCollect<T>::initialize(new MByte(1), 0);" << std::endl;
 		}
 
 		bool foundMem = false;
