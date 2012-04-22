@@ -31,11 +31,17 @@
 
 #include "Types.h"
 
+// ode
+
 #include "Trajectory.h"
 #include "ODESolver.h"
 #include "Problem.h"
 #include "Interpolation.h"
 
+// linear algebra
+
+#include "inmatrix.h"
+#include "invector.h"
 
 #endif	/* INUMERICS_H */
 

@@ -1,6 +1,5 @@
 include_directories("../odeint")
 include_directories("../include")
-include_directories("../include")
 
 
 add_executable( test01 test01.cpp)

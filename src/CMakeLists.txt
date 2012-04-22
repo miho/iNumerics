@@ -12,6 +12,7 @@ set(SRC
 
 add_library(inumerics ${SRC})
 
+target_link_libraries(inumerics ${ACCELERATE})
 
 install (TARGETS inumerics DESTINATION .)
 install (DIRECTORY "../include" DESTINATION .)

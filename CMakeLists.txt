@@ -7,6 +7,13 @@ set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/dist")
 
 # dependencies
 
+# BLAS & LAPACK
+
+if (APPLE)
+    find_library(ACCELERATE NAMES Accelerate)
+endif()
+
+
 # flags
 
 # subdirectories

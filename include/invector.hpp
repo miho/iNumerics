@@ -84,6 +84,7 @@ namespace iNumerics
 			flatCopy ( M );
 		}
 	}
+        
 
 	template <class T>
 	Vector<T>::Vector ( inULong n, bool allowMemSharing )
@@ -281,6 +282,14 @@ namespace iNumerics
 		}
 		return *this;
 	}
+        
+        // non-private, but needs depCopy
+        template <class T>
+        Vector<T> Vector<T>::copy(bool allowMemSharing) const{
+            Vector<T> result(size(),allowMemSharing);
+            result.deepCopy(*this);
+            return result;
+        }
 
 	template <class T>
 	const inULong Vector<T>::size() const
