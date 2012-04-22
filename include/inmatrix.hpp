@@ -1324,7 +1324,7 @@ namespace iNumerics {
         inInt ipiv[n];
         inInt * _ipiv = (inInt*) & ipiv;
 
-        dgesv(&n, &nrhs, _A, &lda, _ipiv, _b_and_x, &ldb, &info);
+        dgesv_(&n, &nrhs, _A, &lda, _ipiv, _b_and_x, &ldb, &info);
         /// Check for the exact singularity
         //        if( info > 0 ) {
         //                printf( "The diagonal element of the triangular factor of A,\n" );

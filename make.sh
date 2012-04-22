@@ -42,10 +42,12 @@ if [ "$1" == "ios-simulator" ]
 then
 	cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DTARGET_PLATFORM=IOS -DIOS_PLATFORM=SIMULATOR -GXcode .. 
 	xcodebuild -target install -configuration Release
+	cp src/Release-iphonesimulator/libinumerics.a ../dist/libinumerics.a
 elif [ "$1" == "ios-device" ] 
 then
 	cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DTARGET_PLATFORM=IOS -GXcode ..
 	xcodebuild -target install -configuration Release
+	cp src/Release-iphoneos/libinumerics.a ../dist/libinumerics.a
 elif [ "$1" == "x86" ]
 then 
 	cmake -DTARGET_PLATFORM="X86" ..

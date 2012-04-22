@@ -40,8 +40,8 @@
 
 // linear algebra
 
-#include "inmatrix.h"
-#include "invector.h"
+//#include "inmatrix.h"
+//#include "invector.h"
 
 #endif	/* INUMERICS_H */
 

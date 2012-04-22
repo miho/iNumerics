@@ -587,7 +587,7 @@ extern "C" void dtrsv_(const char* uplo,
  *                has been completed, but the factor U is exactly
  *                singular, so the solution could not be computed.
  */
-extern "C" void dgesv(const inInt* n,
+extern "C" void dgesv_(const inInt* n,
         const inInt* nrhs,
         const inDouble* a,
         const inInt* lda,

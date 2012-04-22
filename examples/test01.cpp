@@ -10,6 +10,9 @@
 
 #include "iNumerics.h"
 
+#include "inmatrix.h"
+#include "invector.h"
+
 using namespace std;
 using namespace iNumerics;
 
