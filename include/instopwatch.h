@@ -34,8 +34,6 @@ namespace iNumerics
 	};
 }
 #ifndef INSTOPWATCH_HPP
-//#define INCLUDED_IN_SNSTOPWATCH_H
 #include "instopwatch.hpp"
-//#undef INCLUDED_IN_SNSTOPWATCH_H
 #endif /*INSTOPWATCH_HPP*/
 #endif /*INSTOPWATCH_H*/
