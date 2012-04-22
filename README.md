@@ -50,7 +50,7 @@ to finally start the build process:
 
     cmake ..
 
-to start the build process and install everything to path/to/iNumerics/dist:
+to start the build process and install everything to `path/to/iNumerics/dist`:
 
     make install
 
@@ -60,9 +60,9 @@ to start the build process and install everything to path/to/iNumerics/dist:
 
 ## Usage:
 
-The static library libinumerics.a can be found in path/to/iNumerics/dist
+The static library `libinumerics.a` can be found in `path/to/iNumerics/dist`
 
-Example programs (only x86) can be found in path/to/iNumerics/dist/examples.
+Example programs (only x86) can be found in `path/to/iNumerics/dist/examples`.
 
 To use this library in an existing Xcode project, add the library as framework
 and add dist/include to the the project. Make sure you only add the libraries
