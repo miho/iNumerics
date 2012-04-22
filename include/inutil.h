@@ -90,7 +90,7 @@ if ( y <= 3 ) \
 /**
  * \brief iNumerics Standard Namespace
  */
-namespace inumerics
+namespace iNumerics
 {
 	/**
 	 * Returns the absolute value of number.

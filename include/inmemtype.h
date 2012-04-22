@@ -13,7 +13,7 @@
 /**
  * \brief iNumerics Standard Namespace
  */
-namespace inumerics
+namespace iNumerics
 {
 
 	/**

@@ -8,7 +8,7 @@
 
 #include "intypes.h"
 
-namespace inumerics
+namespace iNumerics
 {
 
 	class KByte;

@@ -16,7 +16,7 @@
 /**
  * \brief iNumerics Standard Namespace
  */
-namespace inumerics
+namespace iNumerics
 {
 	/**
 	 * \author Michael Hoffer, 2012
@@ -66,7 +66,7 @@ namespace inumerics
 	 * #include <inmemcollect.h>
 	 * #include <instopwatch.h>
 	 * using namespace std;
-	 * using namespace inumerics;
+	 * using namespace iNumerics;
 	 * 
 	 * class SmallArray
 	 * {
@@ -164,7 +164,7 @@ namespace inumerics
 	 * #include <inmemcollect.h>
 	 * #include "instopwatch.h"
 	 * using namespace std;
-	 * using namespace inumerics;
+	 * using namespace iNumerics;
 	 *
 	 * class SmallArray
 	 * {

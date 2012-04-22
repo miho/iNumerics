@@ -9,7 +9,7 @@
 
 #include "inmemtype.h"
 
-namespace inumerics
+namespace iNumerics
 {
 
 	/******************************************************************************

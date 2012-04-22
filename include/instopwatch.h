@@ -11,7 +11,7 @@
 /**
  * \brief iNumerics Standard Namespace
  */
-namespace inumerics
+namespace iNumerics
 {
 	/**
 	 * \brief Is a stopwatch.

@@ -12,7 +12,7 @@
 
 //#define DEBUG 2
 
-namespace inumerics
+namespace iNumerics
 {
 
 	template <class T>
@@ -416,7 +416,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                          *
-	*       Class: inumerics::Matrix ( EXTRA-METHODS TEMPLATE )                   *
+	*       Class: iNumerics::Matrix ( EXTRA-METHODS TEMPLATE )                   *
 	*                                                                             *
 	******************************************************************************/
 
@@ -632,7 +632,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                          *
-	*       Class: inumerics::Matrix (PRIVATE-MEMBERS)                    	      *
+	*       Class: iNumerics::Matrix (PRIVATE-MEMBERS)                    	      *
 	*                                                                             *
 	******************************************************************************/
 
@@ -700,7 +700,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                          *
-	*       Class: inumerics::Matrix ( TEMPLATE FRIENDS )                         *
+	*       Class: iNumerics::Matrix ( TEMPLATE FRIENDS )                         *
 	*                                                                             *
 	******************************************************************************/
 
@@ -731,7 +731,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T> operator+ ( const Matrix<T>& A, const Matrix<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator+ ( const Matrix<T>& A, const Matrix<T>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator+ ( const Matrix<T>& A, const Matrix<T>& B )",1 );
 		
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
@@ -756,7 +756,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T> operator+ ( const Matrix<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator+ ( const Matrix<T>& A, const T& s )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator+ ( const Matrix<T>& A, const T& s )",1 );
 		IN_ASSERT (! ( A.isDecomposed() )  , 0 );
 
 			inULong n = A.nRows();
@@ -777,7 +777,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T> operator- ( const Matrix<T>& A, const Matrix<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator- ( const Matrix<T>& A, const Matrix<T>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator- ( const Matrix<T>& A, const Matrix<T>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
 			IN_ASSERT ( A.nCols() == B.nCols(), 0 );
@@ -801,7 +801,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T> operator- ( const Matrix<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator- ( const Matrix<T>& A, const T& s )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator- ( const Matrix<T>& A, const T& s )",1 );
 		IN_ASSERT (! ( A.isDecomposed() )  , 0 );
 
 			inULong n = A.nRows();
@@ -822,7 +822,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T> operator* ( const Matrix<T>& A, const Matrix<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator* ( Matrix<T>& A, const Matrix<T>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator* ( Matrix<T>& A, const Matrix<T>& B )",1 );
 		
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 		IN_ASSERT ( A.nCols() == B.nRows(), 0 );
@@ -849,7 +849,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T> operator* ( Matrix<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator* ( Matrix<T>& A, const T& s )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator* ( Matrix<T>& A, const T& s )",1 );
 		IN_ASSERT (! ( A.isDecomposed() ) , 0 );
 
 		inULong n = A.nRows();
@@ -871,7 +871,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T>& operator*= ( Matrix<T>& A, const Matrix<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator*= ( Matrix<T>& A, const Matrix<T>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator*= ( Matrix<T>& A, const Matrix<T>& B )",1 );
 		
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 		IN_ASSERT ( A.nCols() == B.nRows(), 0 );
@@ -899,7 +899,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T>& operator*= ( Matrix<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator*= ( Matrix<T>& A, const T& s )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator*= ( Matrix<T>& A, const T& s )",1 );
 		IN_ASSERT (! ( A.isDecomposed() ) , 0 );
 
 			for ( inULong i = 0;i < A.nRows(); i++ )
@@ -916,7 +916,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T>& operator+= ( Matrix<T>& A, const Matrix<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator+= ( Matrix<T>& A, const Matrix<T>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator+= ( Matrix<T>& A, const Matrix<T>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
 		IN_ASSERT ( A.nCols() == B.nCols(), 0 );
@@ -936,7 +936,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T>& operator+= ( Matrix<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator+= ( Matrix<T>& A, const T& s )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator+= ( Matrix<T>& A, const T& s )",1 );
 		IN_ASSERT (! ( A.isDecomposed() ) , 0 );
 
 			for ( inULong i = 0;i < A.nRows(); i++ )
@@ -953,7 +953,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T>& operator-= ( Matrix<T>& A, const Matrix<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator-= ( Matrix<T>& A, const Matrix<T>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator-= ( Matrix<T>& A, const Matrix<T>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
 		IN_ASSERT ( A.nCols() == B.nCols(), 0 );
@@ -973,7 +973,7 @@ namespace inumerics
 	template <class T>
 	Matrix<T>& operator-= ( Matrix<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" <<A. _objID << ") inumerics::operator-= ( Matrix<T>& A, const T& s )",1 );
+		IN_DISPLAY ( "(" <<A. _objID << ") iNumerics::operator-= ( Matrix<T>& A, const T& s )",1 );
 		IN_ASSERT (! ( A.isDecomposed() ) , 0 );
 
 			for ( inULong i = 0;i < A.nRows(); i++ )
@@ -990,7 +990,7 @@ namespace inumerics
 	template <class T>
 	Vector<T> operator* ( const Matrix<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A.ID() << ") and (" << B.ID() << ") inumerics::operator* ( const Matrix<T>& A, const Vector<T>& B )",1 );
+		IN_DISPLAY ( "(" << A.ID() << ") and (" << B.ID() << ") iNumerics::operator* ( const Matrix<T>& A, const Vector<T>& B )",1 );
 		
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 		IN_ASSERT ( A.nCols() == B.size(), 0 );
@@ -1023,7 +1023,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                          *
-	*       Class: inumerics::Vector (PUBLIC-MEMBERS, Template Specialization)    *
+	*       Class: iNumerics::Vector (PUBLIC-MEMBERS, Template Specialization)    *
 	*                                                                             *
 	******************************************************************************/
 
@@ -1177,20 +1177,20 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                          *
-	*       Class: inumerics::Vector (PPRIVATE-MEMBERS, Template Specialization)  *
+	*       Class: iNumerics::Vector (PPRIVATE-MEMBERS, Template Specialization)  *
 	*                                                                             *
 	******************************************************************************/
 
 	/******************************************************************************
 	*	                                                                          *
-	*       Class: inumerics::Vector (FRIENDS, Template Specialization)           *
+	*       Class: iNumerics::Vector (FRIENDS, Template Specialization)           *
 	*                                                                             *
 	******************************************************************************/
 
 	template <>
 	Matrix<inDouble> operator+ ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator+ ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator+ ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
 		IN_ASSERT ( A.nCols() == B.nCols(), 0 );
@@ -1223,7 +1223,7 @@ namespace inumerics
 	template <>
 	Matrix<inDouble> operator- ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator- ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator- ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
 		IN_ASSERT ( A.nCols() == B.nCols(), 0 );
@@ -1259,7 +1259,7 @@ namespace inumerics
 	template <>
 	Matrix<inDouble> operator* ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator* ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator* ( const Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 		IN_ASSERT ( A.nCols() == B.nRows(), 0 );
 // 		IN_ASSERT ( A.nCols() <= INT_MAX, 0 );
@@ -1293,7 +1293,7 @@ namespace inumerics
 	template <>
 	Matrix<inDouble> operator* ( const Matrix<inDouble>& A, const inDouble& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator* ( const Matrix<inDouble>& A, const inDouble& s )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator* ( const Matrix<inDouble>& A, const inDouble& s )",1 );
 		IN_ASSERT (! ( A.isDecomposed() ) , 0 );
 // 		IN_ASSERT ( A.size() <= INT_MAX, 0 );
 
@@ -1317,7 +1317,7 @@ namespace inumerics
 	template <>
 	Matrix<inDouble>& operator*= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator*= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator*= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
 			A=A*B;
@@ -1328,7 +1328,7 @@ namespace inumerics
 	template <>
 	Matrix<inDouble>& operator*= ( Matrix<inDouble>& A, const inDouble& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator*= ( Matrix<inDouble>& A, const inDouble& s )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator*= ( Matrix<inDouble>& A, const inDouble& s )",1 );
 		IN_ASSERT ( A.size() <= INT_MAX, 0 );
 		IN_ASSERT (! ( A.isDecomposed() ) , 0 );
 
@@ -1345,7 +1345,7 @@ namespace inumerics
 	template <>
 	Matrix<inDouble>& operator+= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator+= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator+= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
 		IN_ASSERT ( A.nCols() == B.nCols(), 0 );
@@ -1369,7 +1369,7 @@ namespace inumerics
 	template <>
 	Matrix<inDouble>& operator-= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator-= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator-= ( Matrix<inDouble>& A, const Matrix<inDouble>& B )",1 );
 		IN_ASSERT ( ( ! A.isDecomposed() ) && ( ! B.isDecomposed() ) , 0 );
 
 		IN_ASSERT ( A.nCols() == B.nCols(), 0 );
@@ -1404,7 +1404,7 @@ namespace inumerics
 	template <>
 	Vector<inDouble> operator* ( const Matrix<inDouble>& A, const Vector<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A.ID() << ") and (" << B.ID() << ") inumerics::operator* ( const Matrix<inDouble>& A, const Vector<inDouble>& B )",1 );
+		IN_DISPLAY ( "(" << A.ID() << ") and (" << B.ID() << ") iNumerics::operator* ( const Matrix<inDouble>& A, const Vector<inDouble>& B )",1 );
 		IN_ASSERT (! ( A.isDecomposed() ) , 0 );
 
 		IN_ASSERT ( A.nCols() == B.size(), 0 );

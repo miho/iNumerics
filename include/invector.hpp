@@ -10,11 +10,11 @@
 //#define DEBUG 2
 
 
-namespace inumerics
+namespace iNumerics
 {
 	/******************************************************************************
 	*	                                                                      *
-	*       Class: inumerics::baseObject (STATIC-MEMBERS)                             *
+	*       Class: iNumerics::baseObject (STATIC-MEMBERS)                             *
 	*                                                                             *
 	******************************************************************************/
 
@@ -25,7 +25,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                      *
-	*       Class: inumerics::Vector (STATIC-MEMBERS)                                 *
+	*       Class: iNumerics::Vector (STATIC-MEMBERS)                                 *
 	*                                                                             *
 	******************************************************************************/
 
@@ -34,7 +34,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                      *
-	*       Class: inumerics::Vector (PUBLIC-MEMBERS)                                 *
+	*       Class: iNumerics::Vector (PUBLIC-MEMBERS)                                 *
 	*                                                                             *
 	******************************************************************************/
 
@@ -449,7 +449,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                      *
-	*       Class: inumerics::Vector ( EXTRA-METHODS TEMPLATE )                       *
+	*       Class: iNumerics::Vector ( EXTRA-METHODS TEMPLATE )                       *
 	*                                                                             *
 	******************************************************************************/
 
@@ -546,7 +546,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                      *
-	*       Class: inumerics::Vector (PRIVATE-MEMBERS)                                *
+	*       Class: iNumerics::Vector (PRIVATE-MEMBERS)                                *
 	*                                                                             *
 	******************************************************************************/
 
@@ -628,7 +628,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                      *
-	*       Class: inumerics::Vector (FRIENDS)                                        *
+	*       Class: iNumerics::Vector (FRIENDS)                                        *
 	*                                                                             *
 	******************************************************************************/
 
@@ -658,7 +658,7 @@ namespace inumerics
 	template <class T>
 	Vector<T> operator+ ( const Vector<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator+ <T> (const Vector<T>& A, const Vector<T>& B)" ,1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator+ <T> (const Vector<T>& A, const Vector<T>& B)" ,1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 
@@ -679,7 +679,7 @@ namespace inumerics
 	template <class T>
 	Vector<T> operator+ ( const Vector<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator+ <T> (const Vector<T>& A, const T& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator+ <T> (const Vector<T>& A, const T& s)",1 );
 
 		inULong m = A.size();
 // 		inULong k = 1 /*A.stride()*/;
@@ -697,7 +697,7 @@ namespace inumerics
 	template <class T>
 	Vector<T> operator- ( const Vector<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator- <T> (const Vector<T>& A, const Vector<T>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator- <T> (const Vector<T>& A, const Vector<T>& B)",1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 
@@ -717,7 +717,7 @@ namespace inumerics
 	template <class T>
 	Vector<T> operator- ( const Vector<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator- <T> (const Vector<T>& A, const T& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator- <T> (const Vector<T>& A, const T& s)",1 );
 
 		inULong m = A.size();
 		//inULong k = 1/*A.stride()*/;
@@ -735,7 +735,7 @@ namespace inumerics
 	template <class T>
 	T operator* ( const Vector<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator* <T> (const Vector<T>& A, const Vector<T>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator* <T> (const Vector<T>& A, const Vector<T>& B)",1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 
@@ -755,7 +755,7 @@ namespace inumerics
 	template <class T>
 	Vector<T> operator* ( const Vector<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator* <T> (const Vector<T>& A, const T& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator* <T> (const Vector<T>& A, const T& s)",1 );
 
 		inULong m = A.size();
 		//inULong k = 1/*A.stride()*/;
@@ -773,7 +773,7 @@ namespace inumerics
 	template <class T>
 	Vector<T>& operator*= ( Vector<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator*= <T> ( Vector<T>& A, const Vector<T>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator*= <T> ( Vector<T>& A, const Vector<T>& B)",1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 
@@ -787,7 +787,7 @@ namespace inumerics
 	template <class T>
 	Vector<T>& operator*= ( Vector<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator*= <T> ( Vector<T>& A, const T& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator*= <T> ( Vector<T>& A, const T& s)",1 );
 
 		for ( inULong j = 0;j < A.size(); j++ )
 		{
@@ -799,7 +799,7 @@ namespace inumerics
 	template <class T>
 	Vector<T>& operator+= ( Vector<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator+= <T> ( Vector<T>& A, const Vector<T>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator+= <T> ( Vector<T>& A, const Vector<T>& B)",1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 
@@ -813,7 +813,7 @@ namespace inumerics
 	template <class T>
 	Vector<T>& operator+= ( Vector<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator+= <T> ( Vector<T>& A, const T& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator+= <T> ( Vector<T>& A, const T& s)",1 );
 
 		for ( inULong j = 0;j < A.size(); j++ )
 		{
@@ -825,7 +825,7 @@ namespace inumerics
 	template <class T>
 	Vector<T>& operator-= ( Vector<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator-= <T> ( Vector<T>& A, const Vector<T>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator-= <T> ( Vector<T>& A, const Vector<T>& B)",1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 
@@ -839,7 +839,7 @@ namespace inumerics
 	template <class T>
 	Vector<T>& operator-= ( Vector<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator-= <T> ( Vector<T>& A, const T& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator-= <T> ( Vector<T>& A, const T& s)",1 );
 
 		for ( inULong j = 0;j < A.size();j++ )
 		{
@@ -851,7 +851,7 @@ namespace inumerics
 	template <class T>
 	T operator/ ( const Vector<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator/ <T> (const Vector<T>& A, const Vector<T>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator/ <T> (const Vector<T>& A, const Vector<T>& B)",1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 
@@ -871,7 +871,7 @@ namespace inumerics
 	template <class T>
 	Vector<T> operator/ ( const Vector<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator/ <T> (const Vector<T>& A, const T& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator/ <T> (const Vector<T>& A, const T& s)",1 );
 
 		inULong m = A.size();
 // 		inULong k = 1/*A.stride()*/;
@@ -889,7 +889,7 @@ namespace inumerics
 	template <class T>
 	Vector<T>& operator/= ( Vector<T>& A, const Vector<T>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator/= <T> ( Vector<T>& A, const Vector<T>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator/= <T> ( Vector<T>& A, const Vector<T>& B)",1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 
@@ -903,7 +903,7 @@ namespace inumerics
 	template <class T>
 	Vector<T>& operator/= ( Vector<T>& A, const T& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator/= <T> ( Vector<T>& A, const T& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator/= <T> ( Vector<T>& A, const T& s)",1 );
 
 		for ( inULong j = 0;j < A.size();j++ )
 		{
@@ -917,7 +917,7 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                      *
-	*       Class: inumerics::Vector (PUBLIC-MEMBERS, Template Specialization)        *
+	*       Class: iNumerics::Vector (PUBLIC-MEMBERS, Template Specialization)        *
 	*                                                                             *
 	******************************************************************************/
 
@@ -1038,13 +1038,13 @@ namespace inumerics
 
 	/******************************************************************************
 	*	                                                                      *
-	*       Class: inumerics::Vector (FRIENDS, Template Specialization)               *
+	*       Class: iNumerics::Vector (FRIENDS, Template Specialization)               *
 	*                                                                             *
 	******************************************************************************/
 	template <>
 	Vector<inDouble> operator+ ( const Vector<inDouble>& A, const Vector<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator+ <inDouble> (const Vector<inDouble>& A, const Vector<inDouble>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator+ <inDouble> (const Vector<inDouble>& A, const Vector<inDouble>& B)",1 );
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
 // 		IN_ASSERT ( A.size() <= INT_MAX, 0 );
@@ -1074,7 +1074,7 @@ namespace inumerics
 	template <>
 	Vector<inDouble> operator- ( const Vector<inDouble>& A, const Vector<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator- <inDouble> (const Vector<inDouble>& A, const Vector<inDouble>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator- <inDouble> (const Vector<inDouble>& A, const Vector<inDouble>& B)",1 );
 
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
@@ -1105,7 +1105,7 @@ namespace inumerics
 	template <>
 	Vector<inDouble> operator* ( const Vector<inDouble>& A, const inDouble& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator* <inDouble> (const Vector<inDouble>& A, const inDouble& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator* <inDouble> (const Vector<inDouble>& A, const inDouble& s)",1 );
 // 		IN_ASSERT ( A.size() <= INT_MAX, 0 );
 
 		inInt m = A.size();
@@ -1126,7 +1126,7 @@ namespace inumerics
 	template <>
 	Vector<inDouble>& operator*= ( Vector<inDouble>& A, const inDouble& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator*= <inDouble> (const Vector<inDouble>& A, const inDouble& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator*= <inDouble> (const Vector<inDouble>& A, const inDouble& s)",1 );
 // 		IN_ASSERT ( A.size() <= INT_MAX, 0 );
 
 		inInt m = A.size();
@@ -1142,7 +1142,7 @@ namespace inumerics
 	template <>
 	Vector<inDouble>& operator+= ( Vector<inDouble>& A, const Vector<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator+= <inDouble> (const Vector<inDouble>& A, const Vector<inDouble>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator+= <inDouble> (const Vector<inDouble>& A, const Vector<inDouble>& B)",1 );
 
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
@@ -1166,7 +1166,7 @@ namespace inumerics
 	template <>
 	Vector<inDouble>& operator-= ( Vector<inDouble>& A, const Vector<inDouble>& B )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") inumerics::operator-= <inDouble> (const Vector<inDouble>& A, const Vector<inDouble>& B)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") and (" << B._objID << ") iNumerics::operator-= <inDouble> (const Vector<inDouble>& A, const Vector<inDouble>& B)",1 );
 
 // 		IN_ASSERT ( A.stride() == B.stride(), 0 );
 		IN_ASSERT ( A.size() == B.size(), 0 );
@@ -1190,7 +1190,7 @@ namespace inumerics
 	template <>
 	Vector<inDouble> operator/ ( const Vector<inDouble>& A, const inDouble& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator/ <inDouble> (const Vector<inDouble>& A, const inDouble& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator/ <inDouble> (const Vector<inDouble>& A, const inDouble& s)",1 );
 // 		IN_ASSERT ( A.size() <= INT_MAX, 0 );
 
 		inInt m = A.size();
@@ -1211,7 +1211,7 @@ namespace inumerics
 	template <>
 	Vector<inDouble>& operator/= ( Vector<inDouble>& A, const inDouble& s )
 	{
-		IN_DISPLAY ( "(" << A._objID << ") inumerics::operator/= <inDouble> (const Vector<inDouble>& A, const inDouble& s)",1 );
+		IN_DISPLAY ( "(" << A._objID << ") iNumerics::operator/= <inDouble> (const Vector<inDouble>& A, const inDouble& s)",1 );
 // 		IN_ASSERT ( A.size() <= INT_MAX, 0 );
 
 		inInt m = A.size();

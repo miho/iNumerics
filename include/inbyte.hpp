@@ -6,7 +6,7 @@
 #define INBYTE_HPP
 #include "inbyte.h"
 
-namespace inumerics
+namespace iNumerics
 {
 	Byte::Byte()
 	{

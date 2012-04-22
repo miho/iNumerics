@@ -21,7 +21,7 @@
 /**
  * \brief iNumerics Standard Namespace
  */
-namespace inumerics
+namespace iNumerics
 {
 	/**
 	 * \brief Defines the type of the memory the vector operates on.
@@ -176,7 +176,7 @@ namespace inumerics
 	 * 
 	 * \code
 	 * #include <invector.h>
-	 * using namespace inumerics;
+	 * using namespace iNumerics;
 	 * 
 	 * int main()
 	 * {

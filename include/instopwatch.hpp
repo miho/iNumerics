@@ -7,7 +7,7 @@
 
 #include "instopwatch.h"
 
-namespace inumerics
+namespace iNumerics
 {
 
 	StopWatch::StopWatch()

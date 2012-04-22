@@ -22,7 +22,7 @@
 /**
  * \brief iNumerics Standard Namespace
  */
-namespace inumerics
+namespace iNumerics
 {
 	
 	/**
@@ -118,7 +118,7 @@ namespace inumerics
 	 * 
 	 * \code
 	 * #include <invector.h>
-	 * using namespace inumerics;
+	 * using namespace iNumerics;
 	 * 
 	 * inInt main()
 	 * {

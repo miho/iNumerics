@@ -8,7 +8,7 @@
 
 #include "newton.h"
 
-using namespace inumerics;
+using namespace iNumerics;
 using namespace std;
 
 typedef Matrix<inDouble> DMat;
@@ -45,7 +45,7 @@ std::string newton()
     stringstream ss;
     
 	// initialize memory manager
-	DVec::memCheck.initialize( MByte( 1.0 ), inumerics::Byte( 0.0 ) );
+	DVec::memCheck.initialize( MByte( 1.0 ), iNumerics::Byte( 0.0 ) );
     
 	// init TOL
 	inDouble TOL = 1e-12;

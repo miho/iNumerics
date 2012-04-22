@@ -9,7 +9,7 @@
 //#define DEBUG 0
 
 
-namespace inumerics
+namespace iNumerics
 {
 
 	/******************************************************************************
@@ -65,7 +65,7 @@ namespace inumerics
 		if ( freeMemList.size() != 0 )
 		{
 			// Debug-Output
-			IN_DISPLAY ( ">> WE HAVE A MEMLIST! Size=" << freeMemList.size() << " (" << inumerics::MByte ( _memListSize ).value() << " MByte)",2 );
+			IN_DISPLAY ( ">> WE HAVE A MEMLIST! Size=" << freeMemList.size() << " (" << iNumerics::MByte ( _memListSize ).value() << " MByte)",2 );
 
 			typename std::deque< MemType<T>* >::iterator i;
             
@@ -73,16 +73,16 @@ namespace inumerics
 			// Iterate through freeMemList and search for matching entry
 			for ( i = freeMemList.begin();i != freeMemList.end();i++ )
 			{
-                inumerics::Byte sizeOfType = inumerics::Byte ( n*sizeof ( T ) );
+                iNumerics::Byte sizeOfType = iNumerics::Byte ( n*sizeof ( T ) );
                 
-                inumerics::Byte sizeOfI = ( *i ) ->memSize();
+                iNumerics::Byte sizeOfI = ( *i ) ->memSize();
                 
                 if (sizeOfType.value() > sizeOfI.value() ) {
                     continue;
                 }
                 
 				// Compute difference between size of list-element *i and requested memory
-                inumerics::Byte TOL = inumerics::Byte(sizeOfI.value() - sizeOfType.value());
+                iNumerics::Byte TOL = iNumerics::Byte(sizeOfI.value() - sizeOfType.value());
 
 				// If memory does match, detach it from freeMemList and hand it over.
 				if ( TOL.value() <= _memTolerance.value() )
@@ -154,7 +154,7 @@ namespace inumerics
 				};
 
 				// Debug-Output
-				IN_DISPLAY ( ">> List-Size: " << freeMemList.size() << " (" << inumerics::MByte ( _memListSize ).value() << " MByte)", 2 );
+				IN_DISPLAY ( ">> List-Size: " << freeMemList.size() << " (" << iNumerics::MByte ( _memListSize ).value() << " MByte)", 2 );
 
 				if ( freeMemList.size() > 0 )
 				{
@@ -164,9 +164,9 @@ namespace inumerics
 					while ( _memListSize.value() > _maxMem.value() )
 					{
 						// Debug-Output
-						IN_DISPLAY ( ">> LIST to BIG, Size:" << inumerics::MByte ( _memListSize ).value() << " MByte)",2 );
+						IN_DISPLAY ( ">> LIST to BIG, Size:" << iNumerics::MByte ( _memListSize ).value() << " MByte)",2 );
                         
-                        std::cout << ">> LIST to BIG, Size:" << inumerics::MByte ( _memListSize ).value() << " MByte)\n";
+                        std::cout << ">> LIST to BIG, Size:" << iNumerics::MByte ( _memListSize ).value() << " MByte)\n";
 
 						--i;
                         
