@@ -11,7 +11,7 @@ iNumerics currently uses ODE solvers from [odeint] (https://github.com/headmysho
 
 ## Compile:
 
-Simple build:
+### Simple build:
 
     cd path/to/iNumerics
 
@@ -26,12 +26,12 @@ or
     ./make.sh x86  (builds for x86, builds example programs)
 
 
-## Manual build:
+### Manual build:
 
     cd path/to/iNumerics
     mkdir build && cd build
 
-## Building for iOS:
+**Building for iOS:**
 
 if you are building for device:
 
@@ -46,7 +46,7 @@ to finally start the build process:
 
     xcodebuild -target install -configuration Release
 
-## Building for x86:
+**Building for x86:**
 
     cmake ..
 
@@ -54,7 +54,7 @@ to start the build process and install everything to `path/to/iNumerics/dist`:
 
     make install
 
-## Cleaning builds:
+### Cleaning builds:
 
     ./make.sh clean
 
