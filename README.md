@@ -15,15 +15,15 @@ iNumerics currently uses ODE solvers from [odeint] (https://github.com/headmysho
 
     cd path/to/iNumerics
 
-    ./make.sh ios-device  (building for device)
+    ./make.sh ios-device  # (building for device)
 
 or
 
-    ./make.sh ios-simulator  (building for simulator)
+    ./make.sh ios-simulator  # (building for simulator)
 
 or
 
-    ./make.sh x86  (builds for x86, builds example programs)
+    ./make.sh x86  # (building for x86, building example programs)
 
 
 ### Manual build:
