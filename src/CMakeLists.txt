@@ -14,5 +14,10 @@ add_library(inumerics ${SRC})
 
 target_link_libraries(inumerics ${ACCELERATE})
 
+
+if(DEBUG)
+    add_definitions( -DDEBUG=1 )
+endif()
+
 install (TARGETS inumerics DESTINATION .)
 install (DIRECTORY "../include" DESTINATION .)

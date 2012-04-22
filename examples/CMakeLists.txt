@@ -1,6 +1,10 @@
 include_directories("../odeint")
 include_directories("../include")
 
+if(DEBUG)
+    add_definitions( -DDEBUG=1 )
+endif()
+
 
 add_executable( test01 test01.cpp)
 

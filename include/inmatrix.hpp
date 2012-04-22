@@ -891,6 +891,8 @@ namespace iNumerics {
 
     template <class T>
     Vector<T> operator|(Matrix<T>& A, const Vector<T>& B) {
+        IN_DISPLAY("(" << A.ID() << ") and (" << B.ID() << ") iNumerics::operator| ( Matrix<T>& A, const Vector<T>& B )", 1);
+        
         A.LUdecomposition();
         return A.LUsolving(B);
     }
@@ -1295,8 +1297,12 @@ namespace iNumerics {
         return C;
     }
 
+    
+
     template <>
     Vector<inDouble> operator|(Matrix<inDouble>& A, const Vector<inDouble>& b) {
+        
+        IN_DISPLAY("(" << A.ID() << ") and (" << b.ID() << ") iNumerics::operator| ( Matrix<inDouble>& A, const Vector<inDouble>& B )", 1);
 
         inInt n = A.nRows();
         inInt lda = A.memDimRows();
