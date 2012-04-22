@@ -408,6 +408,14 @@ namespace iNumerics {
          * Print Matrix on standard output.
          */
         void print() const;
+        
+/**
+         * Copies this matrix (each matrix has its own memory).
+         * @param allowMemSharing Defines whether the returned Matrix allows 
+         *		          other objects to share its memory (Range: false,true).
+         * @return a copy of this matrix
+         */
+        Matrix<T> copy(bool allowMemSharing) const;
 
         /**
          *

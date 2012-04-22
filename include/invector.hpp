@@ -283,7 +283,6 @@ namespace iNumerics
 		return *this;
 	}
         
-        // non-private, but needs depCopy
         template <class T>
         Vector<T> Vector<T>::copy(bool allowMemSharing) const{
             Vector<T> result(size(),allowMemSharing);

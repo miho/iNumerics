@@ -185,6 +185,13 @@ namespace iNumerics {
     }
 
     template <class T>
+    Matrix<T> Matrix<T>::copy(bool allowMemSharing) const {
+        Matrix<T> result(nRows(), nCols(), allowMemSharing);
+        result.deepCopy(*this);
+        return result;
+    }
+
+    template <class T>
     const inULong Matrix<T>::nRows() const {
         return _nRows;
     }
@@ -1287,41 +1294,40 @@ namespace iNumerics {
 
         return C;
     }
- 
 
     template <>
     Vector<inDouble> operator|(Matrix<inDouble>& A, const Vector<inDouble>& b) {
-        
+
         inInt n = A.nRows();
         inInt lda = A.memDimRows();
         inInt ldb = b.memDimRows();
         inInt nrhs = 1; // we only have one vector b and no multiple rhs
-        
+
         Vector<inDouble> x = b.copy();
-        
+
         inDouble * _A = A.getFVector();
         inDouble * _b_and_x = x.getFVector();
-        
+
         inInt info = 0; // result info, if > 0 then an error occured, see below
-        
+
         // we currently don't use pivoting 
         // this vector holds pivot indices
-//        Vector<inInt> ipiv = Vector<inInt>(n);
-//        inInt * _ipiv = ipiv.getFVector();
-        
-        inInt ipiv[n];
-        inInt * _ipiv = (inInt*)&ipiv;
-        
-        dgesv( &n, &nrhs, _A, &lda, _ipiv, _b_and_x, &ldb, &info );
-        /// Check for the exact singularity
-//        if( info > 0 ) {
-//                printf( "The diagonal element of the triangular factor of A,\n" );
-//                printf( "U(%i,%i) is zero, so that A is singular;\n", info, info );
-//                printf( "the solution could not be computed.\n" );
-//                exit( 1 );
-//        }
+        //        Vector<inInt> ipiv = Vector<inInt>(n);
+        //        inInt * _ipiv = ipiv.getFVector();
 
-        
+        inInt ipiv[n];
+        inInt * _ipiv = (inInt*) & ipiv;
+
+        dgesv(&n, &nrhs, _A, &lda, _ipiv, _b_and_x, &ldb, &info);
+        /// Check for the exact singularity
+        //        if( info > 0 ) {
+        //                printf( "The diagonal element of the triangular factor of A,\n" );
+        //                printf( "U(%i,%i) is zero, so that A is singular;\n", info, info );
+        //                printf( "the solution could not be computed.\n" );
+        //                exit( 1 );
+        //        }
+
+
         return x;
     }
 
