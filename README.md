@@ -65,6 +65,7 @@ The static library `libinumerics.a` can be found in `path/to/iNumerics/dist`
 Example programs (only x86) can be found in `path/to/iNumerics/dist/examples`.
 
 To use this library in an existing Xcode project, add the library as framework
-and add dist/include to the the project. Make sure you only add the libraries
-and the header files as reference only! This makes it a lot easier to switch
-between target platforms (device/simulator).
+and add dist/include to the the project. 
+
+> **NOTE:** Make sure you only add the libraries and the header files as reference only!
+> This makes it a lot easier to switch between target platforms (device/simulator).
