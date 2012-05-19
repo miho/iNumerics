@@ -341,7 +341,7 @@ namespace iNumerics
 			 *		This deque is a list containing pointers to allocated memory that is
 			 *		freed, i.e. not referenced anymore.
 			 */
-			std::deque<MemType<T>* > freeMemList;
+			std::deque<MemType<T>* > _freeMemList;
 
 			/**
 			 *

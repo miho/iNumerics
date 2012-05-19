@@ -35,24 +35,13 @@ namespace iNumerics {
         _absError = 1.e-10;
         _relError = 1.e-6;
         _h = 0.1;
-
-        _rhs = NULL;
     }
-
-//    Problem::Problem(const Problem& orig) {
-//    }
 
     Problem::~Problem() {
     }
 
-    Problem& Problem::setInitialValue(DVec init) {
+    Problem& Problem::setInitialValue(DVec init){
         _init = init;
-
-        return *this;
-    }
-
-    Problem& Problem::setRhs(RHS_FUNC rhs) {
-        _rhs = rhs;
 
         return *this;
     }
@@ -73,5 +62,12 @@ namespace iNumerics {
         return *this;
     }
 
+    
+    void Problem::step(const DVec &x, double t) {
+        // std::cout << " --> new step(" << t << ") = "<< x[0] << std::endl;
+        _currentSolution = x;
+        _currentT = t;
+    }
+    
 }
 

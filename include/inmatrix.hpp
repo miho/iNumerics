@@ -38,6 +38,11 @@ namespace iNumerics {
 
         // Debug-Output
         IN_DISPLAY("(" << this->_objID << ") Matrix<T>::Matrix ( const Matrix& M )", 1);
+        
+        this->_allowMemSharing = false;
+		deepCopy ( M );
+                
+                return;
 
         // If input-object allows memory sharing, do flatCopy(),
         // deepCopy() otherwise

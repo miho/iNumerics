@@ -37,12 +37,11 @@ namespace iNumerics {
 
     // forward declarations
     class Problem;
-    
 
     class ODESolver {
     public:
         ODESolver();
-//        ODESolver(const ODESolver& orig);
+        //        ODESolver(const ODESolver& orig);
         virtual ~ODESolver();
 
         void solve(Problem& problem, Trajectory& trajectory);
@@ -52,6 +51,8 @@ namespace iNumerics {
     };
 
 }
+
+
 
 #endif	/* ODESOLVER_H */
 

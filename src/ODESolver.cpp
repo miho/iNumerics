@@ -35,40 +35,35 @@ namespace iNumerics {
     class _StepObserver {
     public:
         Trajectory& _trajectory;
+        Problem& _p;
 
-        _StepObserver(Trajectory& trajectory)
-        : _trajectory(trajectory) {
+        _StepObserver(Problem& p, Trajectory& trajectory)
+        : _trajectory(trajectory), _p(p) {
         }
 
         void operator()(const DVec &x, double t) {
             _trajectory(x, t);
+            _p.step(x, t);
         }
     };
 
-//    class _RhsWrapper {
-//    public:
-//        _RhsWrapper(T& rhsObj, RHS_FUNC rhs) {
-//            _rhsObj = rhsObj;
-//            _rhs = rhs;
-//        }
-//
-//        void operator() (const DVec &y, DVec &dydt, const double t) {
-//            if (_rhsObj == NULL) {
-//                _rhs(y, dydt, t);
-//            } else {
-//                CALL_MEMBER_FN((_rhsObj*), _rhs)(y, dydt, t);
-//            }
-//        }
-//    private:
-//        T& _rhsObj;
-//        RHS_FUNC _rhs;
-//    };
+    class _RhsWrapper {
+    public:
+
+        _RhsWrapper(Problem& rhsObj) : _rhsObj(rhsObj) {
+        }
+
+        void operator() (const DVec &y, DVec &dydt, const double t) {
+            // CALL_MEMBER_FN((_rhsObj*), _rhs)(y, dydt, t);
+            _rhsObj(y, dydt, t);
+
+        }
+    private:
+        Problem& _rhsObj;
+    };
 
     ODESolver::ODESolver() {
     }
-
-//    ODESolver::ODESolver(const ODESolver& orig) {
-//    }
 
     ODESolver::~ODESolver() {
     }
@@ -81,12 +76,11 @@ namespace iNumerics {
 
         integrate_adaptive(
                 make_controlled< error_stepper_type > (problem._absError, problem._relError),
-                problem._rhs,
+                _RhsWrapper(problem),
                 problem._init,
                 problem._t0,
                 problem._tn,
                 problem._h,
-                _StepObserver(trajectory));
-
+                _StepObserver(problem, trajectory));
     }
 }

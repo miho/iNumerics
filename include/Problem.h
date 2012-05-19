@@ -53,20 +53,28 @@ namespace iNumerics {
         
     public:
         Problem();
-//        Problem(const Problem& orig);
-        virtual ~Problem();
 
-        Problem& setRhs(RHS_FUNC rhs);
+        virtual ~Problem();
+        
+        virtual void operator() (const DVec &y, DVec &dydt, const double t) = 0;
         
         Problem& setInitialValue(DVec init);
     
         Problem& setTimeRange(double t0, double tn);
         
         Problem& setPrecision(double absError, double relError, double h = 0.1);
+        
+        void step(const DVec &x, double t);
+        
+        DVec getCurrentSolution() {
+            return _currentSolution;
+        } 
+        
+        double getCurrentTime() {
+            return _currentT;
+        }
 
     private:
-
-        RHS_FUNC _rhs;
         
         double _t0;
         double _tn;
@@ -77,6 +85,9 @@ namespace iNumerics {
         double _h;
         
         DVec _init;
+        
+        DVec _currentSolution;
+        double _currentT;
         
     };
 
