@@ -11,27 +11,27 @@ iNumerics currently uses ODE solvers from [odeint] (https://github.com/headmysho
 
 ## Compile:
 
-Simple build:
+### Simple build:
 
     cd path/to/iNumerics
 
-    ./make.sh ios-device  (building for device)
+    ./make.sh ios-device  # (building for device)
 
 or
 
-    ./make.sh ios-simulator  (building for simulator)
+    ./make.sh ios-simulator  # (building for simulator)
 
 or
 
-    ./make.sh x86  (builds for x86, builds example programs)
+    ./make.sh x86  # (building for x86, building example programs)
 
 
-## Manual build:
+### Manual build:
 
     cd path/to/iNumerics
     mkdir build && cd build
 
-## Building for iOS:
+**Building for iOS:**
 
 if you are building for device:
 
@@ -46,7 +46,7 @@ to finally start the build process:
 
     xcodebuild -target install -configuration Release
 
-## Building for x86:
+**Building for x86:**
 
     cmake ..
 
@@ -54,7 +54,7 @@ to start the build process and install everything to `path/to/iNumerics/dist`:
 
     make install
 
-## Cleaning builds:
+### Cleaning builds:
 
     ./make.sh clean
 
@@ -65,6 +65,7 @@ The static library `libinumerics.a` can be found in `path/to/iNumerics/dist`
 Example programs (only x86) can be found in `path/to/iNumerics/dist/examples`.
 
 To use this library in an existing Xcode project, add the library as framework
-and add dist/include to the the project. Make sure you only add the libraries
-and the header files as reference only! This makes it a lot easier to switch
-between target platforms (device/simulator).
+and add dist/include to the the project. 
+
+> **NOTE:** Make sure you add the libraries and the header files as reference only!
+> This makes it a lot easier to switch between target platforms (device/simulator).
