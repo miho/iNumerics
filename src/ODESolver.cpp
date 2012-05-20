@@ -47,20 +47,20 @@ namespace iNumerics {
         }
     };
 
-    class _RhsWrapper {
-    public:
-
-        _RhsWrapper(Problem& rhsObj) : _rhsObj(rhsObj) {
-        }
-
-        void operator() (const DVec &y, DVec &dydt, const double t) {
-            // CALL_MEMBER_FN((_rhsObj*), _rhs)(y, dydt, t);
-            _rhsObj(y, dydt, t);
-
-        }
-    private:
-        Problem& _rhsObj;
-    };
+//    class _RhsWrapper {
+//    public:
+//
+//        _RhsWrapper(Problem& rhsObj) : _rhsObj(rhsObj) {
+//        }
+//
+//        void operator() (const DVec &y, DVec &dydt, const double t) {
+//            // CALL_MEMBER_FN((_rhsObj*), _rhs)(y, dydt, t);
+//            _rhsObj(y, dydt, t);
+//
+//        }
+//    private:
+//        Problem& _rhsObj;
+//    };
 
     ODESolver::ODESolver() {
     }
@@ -76,7 +76,7 @@ namespace iNumerics {
 
         integrate_adaptive(
                 make_controlled< error_stepper_type > (problem._absError, problem._relError),
-                _RhsWrapper(problem),
+                problem,
                 problem._init,
                 problem._t0,
                 problem._tn,
