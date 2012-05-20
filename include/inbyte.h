@@ -155,11 +155,5 @@ namespace iNumerics
 	};
 }
 
-#ifndef INBYTE_HPP
-//#define INCLUDED_IN_INBYTE_H
-#include "inbyte.hpp"
-//#undef INCLUDED_IN_INBYTE_H
-#endif /*INBYTE_HPP*/
-
 #endif /*INBYTE_H*/
 

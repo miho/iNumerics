@@ -7,6 +7,10 @@ set(SRC
 	Problem.cpp
 	ODESolver.cpp
         Interpolation.cpp
+        inbyte.cpp
+        invector.cpp
+        inmatrix.cpp
+        inbaseobject.cpp
 )
 
 

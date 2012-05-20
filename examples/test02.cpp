@@ -20,9 +20,9 @@ class TestModel : public Model {
     
 public:
 
-    void rhs (const DVec &x, DVec &dxdt, const double t) {
-        dxdt[0] = x[1];
-        dxdt[1] = -x[0] - 0.15 * x[1];
+    void rhs (const DVec &y, DVec &dydt, const double t) {
+        dydt[0] = y[1];
+        dydt[1] = -y[0] - 0.15 * y[1];
     }
 };
 

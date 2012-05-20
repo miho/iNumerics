@@ -3,13 +3,12 @@
 /// \date   2012
 /// \brief Contains the declaration of the vector class.
 
+#ifndef INVECTOR_H
+#define INVECTOR_H
 
 #include <iostream>
 #include <string>
 #include <cmath>
-
-#ifndef INVECTOR_H
-#define INVECTOR_H
 
 #include "intypes.h"
 #include "inmemtype.h"
@@ -36,8 +35,8 @@ namespace iNumerics {
      */
     enum vecType {
         PLAIN_VEC /**
-	    	    	    			   *	\code T* adressOfFirstElement = &memPointer[startIndex]; \endcode
-	    	    	    			   */,
+                                *	\code T* adressOfFirstElement = &memPointer[startIndex]; \endcode
+                                */,
         ROW_VEC /**
 		     		*	\image html row_vec01.png
 	    	    	    	*	\code
@@ -70,8 +69,6 @@ namespace iNumerics {
 
 
     //typedef Vector<inDouble> DVec;
-
-
 
     /**
      *	Stream-Operator.
@@ -131,18 +128,18 @@ namespace iNumerics {
     template <class T>
     Vector<T>& operator/=(Vector<T>& A, const T& s);
 
-    /**
-     *	\author Michael Hoffer, 2012
-     *	\brief BaseObject-Class
-     *	
-     *	This class has no real functionality. It only exists to ensure that all template
-     *	instances of Vector and Matrix use the same static members ::_objCounter and ::_objIDCounter.
-     */
-    class BaseObject {
-    protected:
-        static inULong _objCounter;
-        static inULong _objIDCounter;
-    };
+//    /**
+//     *	\author Michael Hoffer, 2012
+//     *	\brief BaseObject-Class
+//     *	
+//     *	This class has no real functionality. It only exists to ensure that all template
+//     *	instances of Vector and Matrix use the same static members ::_objCounter and ::_objIDCounter.
+//     */
+//    class BaseObject {
+//    protected:
+//        static inULong _objCounter;
+//        static inULong _objIDCounter;
+//    };
 
     /**
      * \author Michael Hoffer, 2012
@@ -344,8 +341,8 @@ namespace iNumerics {
          * @return Reference to Vector.
          */
         Vector<T>& operator=(const Vector<T>& M);
-        
-        
+
+
         /**
          * Copies this vector (each vector has its own memory).
          * @param allowMemSharing Defines whether the returned Vector allows 
@@ -836,10 +833,10 @@ namespace iNumerics {
     };
 }
 
-#ifndef INVECTOR_HPP
+//#ifndef INVECTOR_HPP
 //#define INCLUDED_IN_INVECTOR_H
 #include "invector.hpp"
 //#undef INCLUDED_IN_INVECTOR_H
-#endif /*INVECTOR_HPP*/
+//#endif /*INVECTOR_HPP*/
 
 #endif /*INVECTOR_H*/
