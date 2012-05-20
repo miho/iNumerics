@@ -31,7 +31,7 @@
 
 namespace iNumerics {
 
-    Problem::Problem() {
+    Problem::Problem(Model& model) : _model(model) {
         _absError = 1.e-10;
         _relError = 1.e-6;
         _h = 0.1;

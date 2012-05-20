@@ -32,13 +32,14 @@
 #include <iostream>
 
 #include "Types.h"
+#include "Model.h"
 
 
 
 namespace iNumerics {
-    
-    typedef void (*RHS_FUNC)( const DVec &x , DVec &dxdt , const double t );
-    
+
+    typedef void (*RHS_FUNC)(const DVec &x, DVec &dxdt, const double t);
+
     /*class RHS {
     public:
         virtual void operator() ( const DVec &x , DVec &dxdt , const double t ){};
@@ -46,49 +47,52 @@ namespace iNumerics {
 
     // forward declaration
     class ODESolver;
-    
+
     class Problem {
-        
         friend class ODESolver;
-        
+
     public:
-        Problem();
+
+        Problem(Model& model);
 
         virtual ~Problem();
-        
-        virtual void operator() (const DVec &y, DVec &dydt, const double t) = 0;
-        
+
+        virtual void operator() (const DVec &y, DVec &dydt, const double t) {
+            _model.rhs(y, dydt, t);
+        };
+
         Problem& setInitialValue(DVec init);
-    
+
         Problem& setTimeRange(double t0, double tn);
-        
+
         Problem& setPrecision(double absError, double relError, double h = 0.1);
-        
+
         void step(const DVec &x, double t);
-        
+
         DVec getCurrentSolution() {
             return _currentSolution;
-        } 
-        
+        }
+
         double getCurrentTime() {
             return _currentT;
         }
 
     private:
-        
+        Model& _model;
+
         double _t0;
         double _tn;
-        
+
         double _absError;
         double _relError;
-        
+
         double _h;
-        
+
         DVec _init;
-        
+
         DVec _currentSolution;
         double _currentT;
-        
+
     };
 
 }

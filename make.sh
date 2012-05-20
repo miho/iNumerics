@@ -38,6 +38,8 @@ fi
 
 rm -rf build/* && mkdir -p build && cd build
 
+CMAKE_IOS_SDK_ROOT=
+
 if [ "$1" == "ios-simulator" ]
 then
 	cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain/iOS.cmake -DTARGET_PLATFORM=IOS -DIOS_PLATFORM=SIMULATOR -GXcode .. 

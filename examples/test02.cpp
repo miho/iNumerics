@@ -16,11 +16,11 @@
 using namespace std;
 using namespace iNumerics;
 
-class TestProblem : public Problem {
+class TestModel : public Model {
     
 public:
 
-    void operator() (const DVec &x, DVec &dxdt, const double t) {
+    void rhs (const DVec &x, DVec &dxdt, const double t) {
         dxdt[0] = x[1];
         dxdt[1] = -x[0] - 0.15 * x[1];
     }
@@ -42,7 +42,9 @@ int main(int argc, char** argv) {
 
     //    harm_osc rhs(0.15);
 
-    TestProblem p;
+    TestModel model;
+    
+    Problem p(model);
 
     p.setInitialValue(x).
             // setRhs(&rhs).
