@@ -14,6 +14,7 @@ namespace iNumerics {
     public:
         
         virtual void rhs(const DVec &y, DVec &dydt, const double t) = 0;
+        virtual void step(const DVec &x, double t) = 0;
         
         
         virtual ~Model() {

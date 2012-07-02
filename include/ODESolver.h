@@ -45,6 +45,8 @@ namespace iNumerics {
         virtual ~ODESolver();
 
         void solve(Problem& problem, Trajectory& trajectory);
+        
+        void solve_implicit(Problem& problem, Trajectory& trajectory);
 
     private:
 
