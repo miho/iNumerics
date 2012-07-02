@@ -83,4 +83,24 @@ namespace iNumerics {
                 problem._h,
                 _StepObserver(problem, trajectory));
     }
+    
+    
+    void ODESolver::solve_implicit(Problem& problem, Trajectory& trajectory) {
+        
+        std::cerr << "void ODESolver::solve_implicit(...) not implemented!" << std::endl;
+        
+
+//        using namespace boost::numeric::odeint;
+//
+//        typedef implicit_euler< DVec > error_stepper_type; // may change
+//
+//        integrate_adaptive(
+//                make_controlled< error_stepper_type > (problem._absError, problem._relError),
+//                problem,
+//                problem._init,
+//                problem._t0,
+//                problem._tn,
+//                problem._h,
+//                _StepObserver(problem, trajectory));
+    }
 }

@@ -67,6 +67,7 @@ namespace iNumerics {
         // std::cout << " --> new step(" << t << ") = "<< x[0] << std::endl;
         _currentSolution = x;
         _currentT = t;
+        _model.step(x,t);
     }
     
 }
