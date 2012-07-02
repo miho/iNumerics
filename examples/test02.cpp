@@ -24,6 +24,10 @@ public:
         dydt[0] = y[1];
         dydt[1] = -y[0] - 0.15 * y[1];
     }
+    
+    void step(const DVec &x, double t) {
+        //
+    }
 };
 
 /*
