@@ -2,6 +2,10 @@
 
 iNumerics currently uses ODE solvers from [odeint] (https://github.com/headmyshoulder/odeint-v2).
 
+> **Q:** What?! It only works for iOS?
+>
+> **A:** Calm down. Only the build script is iOS specific. If you provide a CMake toolchain file
+    it should work on other platforms as well.
 
 ## Requirements:
 
